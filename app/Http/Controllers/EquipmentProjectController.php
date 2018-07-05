@@ -2,11 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Persons;
-use Cornford\Googlmapper\Mapper;
+use App\EquipmentProject;
 use Illuminate\Http\Request;
 
-class PersonsController extends Controller
+class EquipmentProjectController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,11 +15,6 @@ class PersonsController extends Controller
     public function index()
     {
         //
-        $allpersons = Persons::all();
-        \Mapper::map(50, 0, ['marker' => false]);
-
-
-        return view('persons.index', compact('allpersons'));
     }
 
     /**
@@ -47,10 +41,10 @@ class PersonsController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Persons  $persons
+     * @param  \App\EquipmentProject  $equipmentProject
      * @return \Illuminate\Http\Response
      */
-    public function show(Persons $persons)
+    public function show(EquipmentProject $equipmentProject)
     {
         //
     }
@@ -58,10 +52,10 @@ class PersonsController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Persons  $persons
+     * @param  \App\EquipmentProject  $equipmentProject
      * @return \Illuminate\Http\Response
      */
-    public function edit(Persons $persons)
+    public function edit(EquipmentProject $equipmentProject)
     {
         //
     }
@@ -70,10 +64,10 @@ class PersonsController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Persons  $persons
+     * @param  \App\EquipmentProject  $equipmentProject
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Persons $persons)
+    public function update(Request $request, EquipmentProject $equipmentProject)
     {
         //
     }
@@ -81,10 +75,10 @@ class PersonsController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Persons  $persons
+     * @param  \App\EquipmentProject  $equipmentProject
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Persons $persons)
+    public function destroy(EquipmentProject $equipmentProject)
     {
         //
     }

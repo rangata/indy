@@ -1,7 +1,6 @@
-<?php
-/**
- * Created by PhpStorm.
- * User: urandom
- * Date: 01.07.18
- * Time: 00:00
- */
+@extends('layouts.app')
+
+
+@section('content')
+<projects-index :projects="{{ $projects }}"></projects-index>
+@endsection

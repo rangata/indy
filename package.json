@@ -22,9 +22,19 @@
         "laravel-mix": "^2.0",
         "lodash": "^4.17.4",
         "popper.js": "^1.12",
-        "vue": "^2.5.7"
+        "vue": "^2.5.7",
+        "vuetify": "^1.1.0"
     },
     "dependencies": {
-        "vue-good-table": "^2.8.2"
+        "@fortawesome/fontawesome-svg-core": "^1.2.0",
+        "@fortawesome/free-brands-svg-icons": "^5.1.0",
+        "@fortawesome/free-regular-svg-icons": "^5.1.0",
+        "@fortawesome/free-solid-svg-icons": "^5.1.0",
+        "@fortawesome/vue-fontawesome": "^0.1.0",
+        "moment": "^2.22.2",
+        "s": "^0.1.1",
+        "vue-good-table": "^2.8.2",
+        "vue-moment": "^4.0.0",
+        "vuejs-datepicker": "^1.5.2"
     }
 }

@@ -4,9 +4,11 @@
     <vue-good-table :columns="columns" :rows="rows" :search-options="{ enabled: true}">
     </vue-good-table>
     </div>
+
 </template>
 
 <script>
+
     import {VueGoodTable} from 'vue-good-table';
 
     export default {

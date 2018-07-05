@@ -2,11 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Persons;
-use Cornford\Googlmapper\Mapper;
+use App\Project;
 use Illuminate\Http\Request;
 
-class PersonsController extends Controller
+class ProjectController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,11 +15,8 @@ class PersonsController extends Controller
     public function index()
     {
         //
-        $allpersons = Persons::all();
-        \Mapper::map(50, 0, ['marker' => false]);
-
-
-        return view('persons.index', compact('allpersons'));
+        $projects = Project::all()->load(['equipment', 'persons']);
+        return view('projects.index', compact('projects'));
     }
 
     /**
@@ -30,7 +26,7 @@ class PersonsController extends Controller
      */
     public function create()
     {
-        //
+        return view('projects.create');
     }
 
     /**
@@ -41,27 +37,30 @@ class PersonsController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $prj = new Project($request->all());
+        $prj->save();
+        return redirect()->to('projects');
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Persons  $persons
+     * @param  \App\Project  $project
      * @return \Illuminate\Http\Response
      */
-    public function show(Persons $persons)
+    public function show(Project $project)
     {
-        //
+        $project->load(['persons','equipment']);
+        return view('projects.show', compact('project'));
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Persons  $persons
+     * @param  \App\Project  $project
      * @return \Illuminate\Http\Response
      */
-    public function edit(Persons $persons)
+    public function edit(Project $project)
     {
         //
     }
@@ -70,10 +69,10 @@ class PersonsController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Persons  $persons
+     * @param  \App\Project  $project
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Persons $persons)
+    public function update(Request $request, Project $project)
     {
         //
     }
@@ -81,10 +80,10 @@ class PersonsController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Persons  $persons
+     * @param  \App\Project  $project
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Persons $persons)
+    public function destroy(Project $project)
     {
         //
     }

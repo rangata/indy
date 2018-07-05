@@ -1,7 +1,6 @@
-<?php
-/**
- * Created by PhpStorm.
- * User: urandom
- * Date: 01.07.18
- * Time: 01:08
- */
+@extends('layouts.app')
+
+
+@section('content')
+<project-view :project="{{ $project }}"></project-view>
+@endsection
